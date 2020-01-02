@@ -1,0 +1,14 @@
+.card-header
+  = link_to 'Log Uit', destroy_user_session_path, method: :delete, class: 'btn btn-primary'
+  = link_to 'Terug', showpage_users_path, class: 'btn btn-primary'
+  = link_to 'Foto toevoegen', addimage_images_path, class: 'btn btn-primary'
+  = link_to "Bekijk foto's", pictures_images_path, class: 'btn btn-primary'
+.card-body
+  .card
+    .card-header
+      Bewerk de naam van de foto
+    .card-body
+      = form_for @image do |f|
+        = f.text_field :title, class: 'form-control'
+        %br
+        = f.submit 'Opslaan', class: 'btn btn-success'

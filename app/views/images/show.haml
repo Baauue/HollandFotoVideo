@@ -1,0 +1,10 @@
+.card-header
+  = link_to 'Log Uit', destroy_user_session_path, method: :delete, class: 'btn btn-primary'
+  = link_to 'Terug', showpage_users_path, class: 'btn btn-primary'
+.card-body
+  - @image.each do |image|
+    .card.float-left.mar-right
+      .card-header
+        %p=image.title
+      .card-body
+        %img{src: image.file_url(:thumb)}

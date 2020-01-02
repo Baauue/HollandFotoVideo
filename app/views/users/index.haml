@@ -1,0 +1,14 @@
+-if current_user
+  .card-header
+    = link_to 'Log Uit', destroy_user_session_path, method: :delete, class: 'btn-own btn btn-primary'
+    = link_to 'Bewerk pagina', showpage_users_path, class: 'btn-own btn btn-primary'
+-else
+.card-body
+-if current_user ? 'black' : 'white'
+  - @image.each do |image|
+    .container
+      .card.mar-right.float-left.mar-bottom
+        .card-header.text-center
+          %p=image.title
+        .card-body
+          %img{src: image.file_url(:thumb)}

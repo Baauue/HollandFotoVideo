@@ -1,0 +1,18 @@
+.card-header
+  = link_to 'Log Uit', destroy_user_session_path, method: :delete, class: 'btn btn-primary'
+  = link_to 'Terug', showpage_users_path, class: 'btn btn-primary'
+.card-body
+  .card
+    .container
+    .card-header
+      Nieuwe gebruiker
+    .card-body
+      =form_for User.new do |f|
+        .row
+          .col-6
+            = f.label :email
+            = f.email_field :email, class: 'form-control'
+          .col-6
+            = f.label :password
+            = f.password_field :password, class: 'form-control'
+            = f.submit "Opslaan", class: 'btn btn-success'

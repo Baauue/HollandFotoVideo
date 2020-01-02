@@ -1,0 +1,14 @@
+.card-header
+  = link_to 'Log Uit', destroy_user_session_path, method: :delete, class: 'btn btn-primary'
+  = link_to 'Terug', showpage_users_path, class: 'btn btn-primary'
+.card-body
+  .card
+    .card-header
+      Gebruiker aanpassen
+    .card-body
+      = form_for @user do |f|
+        = f.label :email
+        %br
+        = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control'
+        %br
+        = f.submit 'Opslaan', class: 'btn btn-success'
